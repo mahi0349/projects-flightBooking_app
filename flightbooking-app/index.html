@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Booking | Home</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">✈️ FlyGo</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="payment.html">Payment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Find Your Perfect Flight</h2>
+      <p>Book cheap flights easily with FlyGo</p>
+    </div>
+  </section>
+
+  <!-- Flight Search Form -->
+  <section class="search-section">
+    <form id="searchForm" action="flights.html" method="GET">
+      <div class="form-group">
+        <label for="from">From</label>
+        <input type="text" id="from" name="from" placeholder="Departure Airport" required>
+      </div>
+
+      <div class="form-group">
+        <label for="to">To</label>
+        <input type="text" id="to" name="to" placeholder="Arrival Airport" required>
+      </div>
+
+      <div class="form-group">
+        <label for="departure">Departure Date</label>
+        <input type="date" id="departure" name="departure" required>
+      </div>
+
+      <div class="form-group">
+        <label for="return">Return Date</label>
+        <input type="date" id="return" name="return">
+      </div>
+
+      <div class="form-group">
+        <label for="passengers">Passengers</label>
+        <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="class">Class</label>
+        <select id="class" name="class">
+          <option value="economy">Economy</option>
+          <option value="business">Business</option>
+          <option value="first">First Class</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Search Flights</button>
+    </form>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="destinations">
+    <h3>Popular Destinations</h3>
+    <div class="dest-grid">
+      <div class="dest-card">
+        <img src="assets/images/paris.jpg" alt="Paris">
+        <p>Paris</p>
+      </div>
+      <div class="dest-card">
+        <img src="assets/images/newyork.jpg" alt="New York">
+        <p>New York</p>
+      </div>
+      <div class="dest-card">
+        <img src="assets/images/dubai.jpg" alt="Dubai">
+        <p>Dubai</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 FlyAway. All rights reserved.</p>
+  </footer>
+</body>
+</html>

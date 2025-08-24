@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Booking | Passenger Details</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">✈️ FlyAway</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="booking.html" class="active">Booking</a></li>
+        <li><a href="payment.html">Payment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Booking Section -->
+  <section class="booking-section">
+    <h2>Passenger Details</h2>
+
+    <!-- Flight Summary -->
+    <div id="flightSummary" class="flight-summary"></div>
+
+    <!-- Passenger Form -->
+    <form id="passengerForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+            <script>
+                const select = document.getElementById("gender");
+
+                select.addEventListener("change", function () {
+                    const defaultOption = select.querySelector('option[value=""]');
+                    if (select.value !== "") {
+                    defaultOption.disabled = true; // disable "Select" after choosing any other
+                    }
+                });
+                </script>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="passport">Passport No.</label>
+        <input type="text" id="passport" placeholder="AB1234567" required>
+      </div>
+
+      <button type="submit" class="btn">Proceed to Payment</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 FlyAway. All rights reserved.</p>
+  </footer>
+
+  <script src="js/booking.js"></script>
+</body>
+</html>
