@@ -9,7 +9,7 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <h1 class="logo">✈️ FlyAway</h1>
+    <h1 class="logo">✈️ FlyGo</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -20,19 +20,26 @@
     </nav>
   </header>
 
-  <!-- Payment Section -->
   <section class="payment-section">
     <h2>Payment Details</h2>
 
-    <!-- Booking Summary -->
     <div id="bookingSummary" class="booking-summary"></div>
 
-    <!-- Payment Form -->
     <form id="paymentForm">
       <div class="form-group">
         <label for="method">Payment Method</label>
         <select id="method" required>
           <option value="">Select</option>
+           <script>
+                const select = document.getElementById("method");
+
+                select.addEventListener("change", function () {
+                    const defaultOption = select.querySelector('option[value=""]');
+                    if (select.value !== "") {
+                    defaultOption.disabled = true; // disable "Select" after choosing any other
+                    }
+                });
+                </script>
           <option value="Card">Credit/Debit Card</option>
           <option value="UPI">UPI</option>
         </select>
