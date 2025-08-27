@@ -129,9 +129,7 @@ function loadConfirmation() {
   `;
 }
 
-// =======================
-// Attach events per page
-// =======================
+
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("searchForm")) {
     document.getElementById("searchForm").addEventListener("submit", saveSearchData);
