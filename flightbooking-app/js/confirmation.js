@@ -1,36 +1,40 @@
-function loadConfirmation() {
-  const flight = JSON.parse(localStorage.getItem("selectedFlight"));
-  const passenger = JSON.parse(localStorage.getItem("passengerDetails"));
-  const payment = localStorage.getItem("paymentStatus");
-  const summaryDiv = document.getElementById("confirmationSummary");
-
-  if (!flight || !passenger || !payment) {
-    summaryDiv.innerHTML = "<p>Booking data missing. Please try again.</p>";
+function loadConfirmation(){
+  const flight = JSON.phase(localStorage.getitem("selectedFlight"));
+  const passenger = JSON.phase(localStorage.getItem("passengerDetails"));
+  const payment = JSON.phase(localStorage.getItem("paymentDetails"));
+  const summaryDiv = document .getElementById("confrimationSummery"); 
+  if (!flight || !passenger || !payment  ){
+    summaryDiv.innerHTML = "<p>Booking data mising. Please provoide your details for the flight and try again.</p>";
     return;
   }
 
+
   summaryDiv.innerHTML = `
-    <h3>Flight Details</h3>
-    <p><strong>Airline:</strong> ${flight.airline}</p>
-    <p><strong>Route:</strong> ${flight.from} → ${flight.to}</p>
-    <p><strong>Time:</strong> ${flight.time}</p>
-    <p><strong>Price:</strong> ₹${flight.price}</p>
+    <h3>Flight details</h3>
+    <p><strong>Airlinr:</strong>${flight.airline}</p>
+    <p><strong>Route:</strong>${flight.from}-> ${flight.to}</p>
+    <p><strong>Time:</strong>${flight.time}</p>
+    <p><strong>price:</strong>₹${flight.price}</p>
 
-    <h3>Passenger Details</h3>
-    <p><strong>Name:</strong> ${passenger.name}</p>
-    <p><strong>Age:</strong> ${passenger.age}</p>
-    <p><strong>Gender:</strong> ${passenger.gender}</p>
-    <p><strong>Passport:</strong> ${passenger.passport}</p>
 
+    <h3>Pssenger Deatils</h3>   
+    <p><strong>Name:</strong>${passenger.name}</p>
+    <p><strong>Age:</strong>${passenger.age}</p>
+    <p><strong>Gender:</strong>${passenger.gender}</p>
+    <p><strong>Passport:</strong>${passenger.passport}</p>
+
+    
     <h3>Payment</h3>
-    <p><strong>Status:</strong> ✅ ${payment}</p>
-  `;
+    <p><strong>Payment:</strong> ✅ ${payment}</p>
+    `;
 
-  // Clear localStorage after booking is done
+  //clear everthing after the booking is complete
   localStorage.removeItem("selectedFlight");
   localStorage.removeItem("passengerDetails");
   localStorage.removeItem("paymentStatus");
+
+
+
 }
 
-// Run on page load
 window.onload = loadConfirmation;
