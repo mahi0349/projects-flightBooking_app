@@ -58,3 +58,6 @@ function bookFlight(index) {
 
 // Run function on page load
 window.onload = displayFlights;
+
+
+

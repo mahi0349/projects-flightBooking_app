@@ -24,7 +24,6 @@ function loadFlights() {
   const searchData = JSON.parse(localStorage.getItem("searchData"));
   if (!searchData) return;
 
-  // Dummy flights (replace with API later)
   const flights = [
     { id: 1, airline: "IndiGo", time: "08:00", price: 4500 },
     { id: 2, airline: "Air India", time: "12:30", price: 6000 },
@@ -42,7 +41,7 @@ function loadFlights() {
   `).join("");
 }
 
-// Save selected flight
+
 function selectFlight(id) {
   const flights = [
     { id: 1, airline: "IndiGo", time: "08:00", price: 4500 },
